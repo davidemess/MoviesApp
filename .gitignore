@@ -1,0 +1,82 @@
+## Ignore build results
+bin/
+obj/
+out/
+*.dll
+*.exe
+*.app
+*.log
+
+## User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Visual Studio Code settings
+.vscode/
+
+# Visual Studio specific
+.vs/
+*.dbmdl
+*.VC.db
+*.VC.VC.opendb
+*.sln.ide
+*.ipch
+*.cache
+*.sdf
+*.opensdf
+*.v12.suo
+*.psess
+*.vsp
+*.vspscc
+*.vssscc
+*.ncb
+*.suo
+*.tlh
+*.tli
+*.cachefile
+*.pdb
+
+
+## Dotnet specific
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## ASP.NET Core
+*.db
+*.pdb
+*.cache
+*.config
+*.json
+
+## NuGet Packages
+*.nupkg
+*.snupkg
+.nuget/
+
+## Other
+*.vspscc
+*.vssscc
+_ReSharper*/
+*.resharper
+*.DotSettings.user
+
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## Rider
+.idea/
+
+## Logs
+*.log
+
+## Temporary files
+*.tmp
+*.temp
+
+## Test results
+TestResults/
