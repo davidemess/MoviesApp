@@ -17,7 +17,7 @@ namespace Movies.Api.Mapping
             };
         }
 
-        public static MovieResponse MapToMovieResponse(this Movie movie)
+        public static MovieResponse MapToResponse(this Movie movie)
         {
             return new MovieResponse
             {
@@ -25,6 +25,14 @@ namespace Movies.Api.Mapping
                 Title = movie.Title,
                 YearOfRelease = movie.YearOfRelease,
                 Genre = movie.Genre
+            };
+        }
+
+        public static MoviesResponse MapToResponse(this IEnumerable<Movie> movies)
+        {
+            return new MoviesResponse
+            {
+                Items = movies.Select(MapToResponse)
             };
         }
     }

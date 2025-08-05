@@ -23,9 +23,27 @@ namespace Movies.Api.Controllers
 
             await _movieRepository.CreateAsync(movie);
 
-            var response = movie.MapToMovieResponse();
+            var response = movie.MapToResponse();
 
             return Created($"/{ApiEndpoints.Movies.Create}/{response.Id}", response);
+        }
+
+        [HttpGet(ApiEndpoints.Movies.Get)]
+        public async Task<IActionResult> Get([FromRoute] Guid id)
+        {
+            var movie = await _movieRepository.GetByIdAsync(id);
+
+            if (movie is null)
+                return NotFound();
+
+            return Ok(movie.MapToResponse());
+        }
+
+        [HttpGet(ApiEndpoints.Movies.GetAll)]
+        public async Task<IActionResult> GetAll()
+        {
+            var movies = await _movieRepository.GetAllAsync();
+            return Ok(movies.MapToResponse());
         }
     }
 }
