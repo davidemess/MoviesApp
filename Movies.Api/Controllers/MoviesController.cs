@@ -25,7 +25,7 @@ namespace Movies.Api.Controllers
 
             var response = movie.MapToResponse();
 
-            return Created($"/{ApiEndpoints.Movies.Create}/{response.Id}", response);
+            return CreatedAtAction(nameof(Get), new { id = movie.Id }, movie);
         }
 
         [HttpGet(ApiEndpoints.Movies.Get)]
