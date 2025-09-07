@@ -25,13 +25,19 @@ namespace Movies.Application.Database
                 id UUID primary key,
                 slug TEXT not null,
                 title TEXT not null,
-                yearofrelease integer not null);
+                yearofrelease INTEGER not null);
             """);
 
             await connection.ExecuteAsync("""
                 create unique index concurrently if not exists movies_slug_idx
                 on movies
                 using btree(slug);
+            """);
+
+            await connection.ExecuteAsync("""
+                create table if not exists genres (
+                movieId UUID references movies(id),
+                name TEXT not null);
             """);
         }
     }
