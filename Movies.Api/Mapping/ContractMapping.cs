@@ -13,7 +13,7 @@ namespace Movies.Api.Mapping
                 Id = Guid.NewGuid(),
                 Title = request.Title,
                 YearOfRelease = request.YearOfRelease,
-                Genre = request.Genre.ToList()
+                Genres = request.Genre.ToList()
             };
         }
 
@@ -25,7 +25,7 @@ namespace Movies.Api.Mapping
                 Title = movie.Title,
                 YearOfRelease = movie.YearOfRelease,
                 Slug = movie.Slug,
-                Genre = movie.Genre
+                Genre = movie.Genres
             };
         }
 
@@ -43,7 +43,7 @@ namespace Movies.Api.Mapping
                 Id = id,
                 Title = request.Title,
                 YearOfRelease = request.YearOfRelease,
-                Genre = request.Genre.ToList()
+                Genres = request.Genre.ToList()
             };
         }
 
